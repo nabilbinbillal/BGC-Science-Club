@@ -1,0 +1,634 @@
+/* Font Awesome Icons */
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 900;
+  font-display: block;
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Free';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Font Awesome 6 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2') format('woff2');
+}
+
+/* Font Awesome base styles */
+.fa,
+.fas,
+.fa-solid,
+.far,
+.fa-regular,
+.fab,
+.fa-brands {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  line-height: 1;
+  text-rendering: auto;
+}
+
+/* Solid icons */
+.fa,
+.fas,
+.fa-solid {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+}
+
+/* Regular icons */
+.far,
+.fa-regular {
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 400;
+}
+
+/* Brand icons */
+.fab,
+.fa-brands {
+  font-family: 'Font Awesome 6 Brands';
+  font-weight: 400;
+}
+
+/* RTL support for Font Awesome icons */
+[dir="rtl"] .fa,
+[lang="bn"] .fa,
+[lang="bn-BD"] .fa,
+[dir="rtl"] .fas,
+[lang="bn"] .fas,
+[lang="bn-BD"] .fas,
+[dir="rtl"] .fa-solid,
+[lang="bn"] .fa-solid,
+[lang="bn-BD"] .fa-solid {
+  font-family: 'Font Awesome 6 Free' !important;
+}
+
+[dir="rtl"] .fab,
+[lang="bn"] .fab,
+[lang="bn-BD"] .fab,
+[dir="rtl"] .fa-brands,
+[lang="bn"] .fa-brands,
+[lang="bn-BD"] .fa-brands {
+  font-family: 'Font Awesome 6 Brands' !important;
+}
+/* Google Fonts import - must be at the top */
+@import url('https://fonts.googleapis.com/css?family=Kalpurush');
+
+/* Base styles and CSS variables */
+@font-face {
+    font-family: 'Kalpurush';
+    src: url('/assets/fonts/kalpurush.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Override Google Translate font families */
+.goog-te-menu2-item div, .goog-te-menu2-item:link div, .goog-te-menu2-item:visited div, .goog-te-menu2-item:active div,
+#goog-gt-tt, .goog-te-balloon-frame, .goog-tooltip, .goog-tooltip:hover,
+.goog-text-highlight, :-webkit-any(.VIpgJd-ZVi9od-l4eHX-hSRGPd, .VIpgJd-ZVi9od-l4eHX-hSRGPd *),
+body[style*="font-family"] {
+    font-family: 'Kalpurush', Arial !important;
+}
+
+/* Override system Bengali fonts */
+*:lang(bn),
+*[lang="bn"],
+*[lang="bn-BD"],
+.translated-rtl *,
+.translated-ltr *,
+.goog-te-combo,
+.goog-te-gadget *,
+.goog-te-menu-value,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-SmfZ-OEVmcd-tJHJj,
+.goog-te-gadget-simple {
+    font-family: 'Kalpurush', sans-serif !important;
+}
+
+/* Override inline styles */
+[style*="font-family"] {
+    font-family: 'Kalpurush', sans-serif !important;
+}
+
+/* High specificity override for translated content */
+html[lang="bn"] body,
+html[lang="bn-BD"] body,
+.translated-rtl body,
+.translated-ltr body {
+    font-family: 'Kalpurush', sans-serif !important;
+}
+
+/* Additional override for Google Translate widget */
+#goog-gt-, .goog-te-banner-frame {
+    font-family: 'Kalpurush', sans-serif !important;
+}
+
+
+:root {
+    /* Light theme colors */
+    --color-primary-50: #f0f9ff;
+    --color-primary-100: #e0f2fe;
+    --color-primary-200: #bae6fd;
+    --color-primary-300: #7dd3fc;
+    --color-primary-400: #38bdf8;
+    --color-primary-500: #0ea5e9;
+    --color-primary-600: #0284c7;
+    --color-primary-700: #0369a1;
+    --color-primary-800: #075985;
+    --color-primary-900: #0c4a6e;
+
+    --color-secondary-50: #f8fafc;
+    --color-secondary-100: #f1f5f9;
+    --color-secondary-200: #e2e8f0;
+    --color-secondary-300: #cbd5e1;
+    --color-secondary-400: #94a3b8;
+    --color-secondary-500: #64748b;
+    --color-secondary-600: #475569;
+    --color-secondary-700: #334155;
+    --color-secondary-800: #1e293b;
+    --color-secondary-900: #0f172a;
+
+    --color-error-50: #fef2f2;
+    --color-error-100: #fee2e2;
+    --color-error-200: #fecaca;
+    --color-error-300: #fca5a5;
+    --color-error-400: #f87171;
+    --color-error-500: #ef4444;
+    --color-error-600: #dc2626;
+    --color-error-700: #b91c1c;
+    --color-error-800: #991b1b;
+    --color-error-900: #7f1d1d;
+}
+
+/* Dark theme colors */
+.dark {
+    --color-primary-50: #0c4a6e;
+    --color-primary-100: #075985;
+    --color-primary-200: #0369a1;
+    --color-primary-300: #0284c7;
+    --color-primary-400: #0ea5e9;
+    --color-primary-500: #38bdf8;
+    --color-primary-600: #7dd3fc;
+    --color-primary-700: #bae6fd;
+    --color-primary-800: #e0f2fe;
+    --color-primary-900: #f0f9ff;
+
+    --color-secondary-50: #0f172a;
+    --color-secondary-100: #1e293b;
+    --color-secondary-200: #334155;
+    --color-secondary-300: #475569;
+    --color-secondary-400: #64748b;
+    --color-secondary-500: #94a3b8;
+    --color-secondary-600: #cbd5e1;
+    --color-secondary-700: #e2e8f0;
+    --color-secondary-800: #f1f5f9;
+    --color-secondary-900: #f8fafc;
+}
+
+body {
+    font-family: 'Poppins', 'Kalpurush', sans-serif;
+}
+
+/* Apply Kalpurush font to translated content */
+body.translated-ltr,
+body.translated-rtl,
+.skiptranslate,
+.goog-te-combo,
+.goog-te-gadget,
+.goog-te-gadget *,
+.goog-te-menu-value,
+.goog-text-highlight,
+.VIpgJd-ZVi9od-l4eHX-hSRGPd,
+.VIpgJd-ZVi9od-ORHb-OEVmcd {
+    font-family: 'Kalpurush', sans-serif !important;
+}
+
+/* Force Kalpurush font for Bengali text */
+[lang="bn"],
+[lang="bn-BD"],
+.gtranslate_wrapper.translated-content,
+.translated-content {
+    font-family: 'Kalpurush', sans-serif !important;
+}
+
+/* Custom Classes for Theme Colors */
+.bg-primary-50 { background-color: var(--color-primary-50); }
+.bg-primary-100 { background-color: var(--color-primary-100); }
+.bg-primary-200 { background-color: var(--color-primary-200); }
+.bg-primary-300 { background-color: var(--color-primary-300); }
+.bg-primary-400 { background-color: var(--color-primary-400); }
+.bg-primary-500 { background-color: var(--color-primary-500); }
+.bg-primary-600 { background-color: var(--color-primary-600); }
+.bg-primary-700 { background-color: var(--color-primary-700); }
+.bg-primary-800 { background-color: var(--color-primary-800); }
+.bg-primary-900 { background-color: var(--color-primary-900); }
+
+.bg-secondary-50 { background-color: var(--color-secondary-50); }
+.bg-secondary-100 { background-color: var(--color-secondary-100); }
+.bg-secondary-200 { background-color: var(--color-secondary-200); }
+.bg-secondary-300 { background-color: var(--color-secondary-300); }
+.bg-secondary-400 { background-color: var(--color-secondary-400); }
+.bg-secondary-500 { background-color: var(--color-secondary-500); }
+.bg-secondary-600 { background-color: var(--color-secondary-600); }
+.bg-secondary-700 { background-color: var(--color-secondary-700); }
+.bg-secondary-800 { background-color: var(--color-secondary-800); }
+.bg-secondary-900 { background-color: var(--color-secondary-900); }
+
+.text-primary-500 { color: var(--color-primary-500); }
+.text-secondary-500 { color: var(--color-secondary-500); }
+.text-accent-500 { color: var(--color-accent-500); }
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s ease-in-out;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.5s ease-in-out;
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-up {
+    animation: slideInUp 0.5s ease-in-out;
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/images/image.png');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+.dark .hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('/assets/images/image.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Card Styles */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Executive and Member Cards */
+.profile-card {
+    transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card .social-icons {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.profile-card:hover .social-icons {
+    opacity: 1;
+}
+
+/* Custom Form Styles */
+.form-input {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Button Styles */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Activity Card Styles */
+.activity-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.activity-card img {
+    transition: transform 0.5s ease;
+}
+
+.activity-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Dark Mode Scrollbar */
+.dark ::-webkit-scrollbar-track {
+    background: #2d3748;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #4a5568;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #718096;
+}
+
+/* Admin Dashboard Styles */
+.admin-sidebar {
+    min-width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.admin-content {
+    transition: margin-left 0.3s ease;
+}
+
+/* Dark Mode Transitions */
+.dark-mode-toggle {
+    transition: all 0.3s ease;
+}
+
+/* Responsive Table Styles */
+@media (max-width: 640px) {
+    .responsive-table {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+    }
+}
+
+/* Theme transition classes */
+.transition-theme {
+    transition-property: background-color, color, border-color, box-shadow;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+
+/* Apply transitions to common elements */
+body,
+header,
+nav,
+footer,
+.card,
+.button,
+.input,
+.modal,
+.sidebar {
+    transition-property: background-color, color, border-color, box-shadow;
+    transition-duration: 300ms;
+    transition-timing-function: ease-in-out;
+}
+
+/* Add Bengali text specific class */
+.bangla {
+    font-family: 'Kalpurush', sans-serif;
+}
+
+/* Fix: Make text boxes and form boxes background white and text black */
+input,
+textarea,
+select {
+    background-color: white !important;
+    color: black !important;
+    border: 1px solid #ccc;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Ensure select controls and form inputs remain readable in both light and dark themes */
+.form-select, select, .form-input, input[type="text"], input[type="email"], input[type="tel"], textarea {
+    color: #1f2937; /* dark-gray for light-theme */
+}
+.dark .form-select, .dark select, .dark .form-input, .dark input[type="text"], .dark input[type="email"], .dark input[type="tel"], .dark textarea {
+    color: #ffffff; /* white for dark-theme */
+}
+
+/* Option styling */
+select option {
+    color: #111827;
+    background: #ffffff;
+}
+.dark select option {
+    color: #ffffff;
+    background: #1f2937;
+}
+
+/* Selected / checked option visual */
+select option:checked, select option[selected] {
+    background-color: var(--color-primary-600) !important;
+    color: #ffffff !important;
+}
+
+/* Selected pill style (use this on selected class/department/group pills) */
+.pill-selected {
+    background-color: var(--color-primary-700) !important;
+    color: #ffffff !important;
+    border-color: var(--color-primary-700) !important;
+    box-shadow: 0 6px 18px rgba(2, 132, 199, 0.18);
+    font-weight: 600;
+}
+
+/* Segments dropdown improvements: reduce hover gap and ensure visibility above other elements */
+.nav-segments-dropdown {
+    margin-top: .25rem; /* small gap to reduce pointer loss */
+    z-index: 1000; /* show above overlays */
+}
+.nav-segments-dropdown.transition {
+    transition: opacity 160ms ease-in-out, transform 160ms ease-in-out;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    border-color: var(--color-primary-500);
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3);
+    outline: none;
+}
+
+/* Override Tailwind dark mode styles for form-input class */
+.dark .form-input {
+    background-color: white !important;
+    border-color: #ccc !important;
+    color: black !important;
+}
+
+.dark .form-input:focus {
+    border-color: var(--color-primary-500) !important;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.3) !important;
+    outline: none !important;
+}
+
+/* RTL language support */
+[dir="rtl"],
+[lang="bn"],
+[lang="bn-BD"] {
+    direction: rtl;
+    text-align: right;
+}
+
+/* Fix for RTL layout issues */
+[dir="rtl"] .gtranslate_wrapper,
+[lang="bn"] .gtranslate_wrapper,
+[lang="bn-BD"] .gtranslate_wrapper {
+    direction: ltr;
+    text-align: left;
+}
+
+/* Ensure icons remain visible in RTL */
+[dir="rtl"] .goog-te-menu-value span,
+[lang="bn"] .goog-te-menu-value span,
+[lang="bn-BD"] .goog-te-menu-value span {
+    display: inline-flex !important;
+    align-items: center;
+}
+
+/* Fix ellipsis in RTL */
+[dir="rtl"] .goog-te-menu-value span:after,
+[lang="bn"] .goog-te-menu-value span:after,
+[lang="bn-BD"] .goog-te-menu-value span:after {
+    content: "..." !important;
+    display: inline-block !important;
+    margin-right: 5px;
+}
+
+/* Ensure language switcher remains clickable */
+.goog-te-menu-value {
+    display: flex !important;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Fix for Google Translate widget in RTL */
+.goog-te-gadget {
+    font-family: 'Kalpurush', sans-serif !important;
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+/* Fix for dropdown menu in RTL */
+[dir="rtl"] .dropdown-menu,
+[lang="bn"] .dropdown-menu,
+[lang="bn-BD"] .dropdown-menu {
+    left: 0 !important;
+    right: auto !important;
+    text-align: right;
+}
+
+/* Fix for social icons and other icons in RTL */
+[dir="rtl"] .flex.items-center,
+[lang="bn"] .flex.items-center,
+[lang="bn-BD"] .flex.items-center {
+    flex-direction: row-reverse;
+}
+
+/* Fix for icon spacing in RTL */
+[dir="rtl"] .flex.items-center > :not([hidden]) ~ :not([hidden]),
+[lang="bn"] .flex.items-center > :not([hidden]) ~ :not([hidden]),
+[lang="bn-BD"] .flex.items-center > :not([hidden]) ~ :not([hidden]) {
+    margin-right: 0.5rem;
+    margin-left: 0 !important;
+}
+
+/* Font Awesome icons margin fix in RTL */
+[dir="rtl"] .fa,
+[lang="bn"] .fa,
+[lang="bn-BD"] .fa,
+[dir="rtl"] .fas,
+[lang="bn"] .fas,
+[lang="bn-BD"] .fas,
+[dir="rtl"] .fa-solid,
+[lang="bn"] .fa-solid,
+[lang="bn-BD"] .fa-solid,
+[dir="rtl"] .fab,
+[lang="bn"] .fab,
+[lang="bn-BD"] .fab,
+[dir="rtl"] .fa-brands,
+[lang="bn"] .fa-brands,
+[lang="bn-BD"] .fa-brands {
+    margin-left: 0.3em;
+    margin-right: 0;
+}
+
+/* Ensure proper icon alignment in RTL */
+[dir="rtl"] [class^="icon-"],
+[dir="rtl"] [class*=" icon-"],
+[lang="bn"] [class^="icon-"],
+[lang="bn"] [class*=" icon-"],
+[lang="bn-BD"] [class^="icon-"],
+[lang="bn-BD"] [class*=" icon-"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}

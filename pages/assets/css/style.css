@@ -1,0 +1,329 @@
+
+/* Font display optimization */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-solid-900.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'FontAwesome';
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-regular-400.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'FontAwesomeBrands';
+  src: url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/webfonts/fa-brands-400.woff2') format('woff2');
+  font-display: swap;
+  font-weight: 400;
+}
+/* Base styles and CSS variables */
+@font-face {
+    font-family: 'Kalpurush';
+    src: url('/assets/fonts/kalpurush.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Override Google Translate font families */
+.goog-te-menu2-item div, .goog-te-menu2-item:link div, .goog-te-menu2-item:visited div, .goog-te-menu2-item:active div,
+#goog-gt-tt, .goog-te-balloon-frame, .goog-tooltip, .goog-tooltip:hover,
+.goog-text-highlight, :-webkit-any(.VIpgJd-ZVi9od-l4eHX-hSRGPd, .VIpgJd-ZVi9od-l4eHX-hSRGPd *),
+body[style*="font-family"] {
+    font-family: 'Kalpurush', Arial !important;
+}
+
+/* Override system Bengali fonts */
+*:lang(bn),
+*[lang="bn"],
+*[lang="bn-BD"],
+.translated-rtl *,
+.translated-ltr *,
+.goog-te-combo,
+.goog-te-gadget *,
+.goog-te-menu-value,
+.VIpgJd-ZVi9od-ORHb-OEVmcd,
+.VIpgJd-ZVi9od-SmfZ-OEVmcd-tJHJj,
+.goog-te-gadget-simple {
+    font-family: 'Kalpurush', sans-serif !important;
+}
+
+/* Override inline styles */
+[style*="font-family"] {
+    font-family: 'Kalpurush', sans-serif !important;
+}
+
+/* High specificity override for translated content */
+html[lang="bn"] body,
+html[lang="bn-BD"] body,
+.translated-rtl body,
+.translated-ltr body {
+    font-family: 'Kalpurush', sans-serif !important;
+}
+
+/* Additional override for Google Translate widget */
+#goog-gt-, .goog-te-banner-frame {
+    font-family: 'Kalpurush', sans-serif !important;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Kalpurush);
+
+body {
+    font-family: 'Poppins', 'Kalpurush', sans-serif;
+}
+
+/* Custom Classes for Theme Colors */
+.bg-primary-50 { background-color: #f0f9ff; }
+.bg-primary-100 { background-color: #e0f2fe; }
+.bg-primary-200 { background-color: #bae6fd; }
+.bg-primary-300 { background-color: #7dd3fc; }
+.bg-primary-400 { background-color: #38bdf8; }
+.bg-primary-500 { background-color: #0ea5e9; }
+.bg-primary-600 { background-color: #0284c7; }
+.bg-primary-700 { background-color: #0369a1; }
+.bg-primary-800 { background-color: #075985; }
+.bg-primary-900 { background-color: #0c4a6e; }
+
+.bg-secondary-50 { background-color: #f8fafc; }
+.bg-secondary-100 { background-color: #f1f5f9; }
+.bg-secondary-200 { background-color: #e2e8f0; }
+.bg-secondary-300 { background-color: #cbd5e1; }
+.bg-secondary-400 { background-color: #94a3b8; }
+.bg-secondary-500 { background-color: #64748b; }
+.bg-secondary-600 { background-color: #475569; }
+.bg-secondary-700 { background-color: #334155; }
+.bg-secondary-800 { background-color: #1e293b; }
+.bg-secondary-900 { background-color: #0f172a; }
+
+/* Animations */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.slide-in-right {
+    animation: slideInRight 0.5s ease-in-out;
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-left {
+    animation: slideInLeft 0.5s ease-in-out;
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-20px); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+.slide-in-up {
+    animation: slideInUp 0.5s ease-in-out;
+}
+
+@keyframes slideInUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/assets/images/bg_image.webp');
+    background-size: cover;
+    background-position: center;
+    height: 500px;
+}
+
+/* Card Styles */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Executive and Member Cards */
+.profile-card {
+    transition: all 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card .social-icons {
+    transition: opacity 0.3s ease;
+    opacity: 0;
+}
+
+.profile-card:hover .social-icons {
+    opacity: 1;
+}
+
+/* Custom Form Styles */
+.form-input {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus {
+    border-color: #0ea5e9;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Button Styles */
+.btn {
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+/* Activity Card Styles */
+.activity-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.activity-card img {
+    transition: transform 0.5s ease;
+}
+
+.activity-card:hover img {
+    transform: scale(1.05);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Admin Dashboard Styles */
+.admin-sidebar {
+    min-width: 250px;
+    transition: transform 0.3s ease;
+}
+
+.admin-content {
+    transition: margin-left 0.3s ease;
+}
+
+/* Add Bengali text specific class */
+.bangla {
+    font-family: 'Kalpurush', sans-serif;
+}
+
+/* Custom CSS Variables */
+:root {
+    --primary-50: #f0f9ff;
+    --primary-100: #e0f2fe;
+    --primary-200: #bae6fd;
+    --primary-300: #7dd3fc;
+    --primary-400: #38bdf8;
+    --primary-500: #0ea5e9;
+    --primary-600: #0284c7;
+    --primary-700: #0369a1;
+    --primary-800: #075985;
+    --primary-900: #0c4a6e;
+}
+
+/* Utility Classes */
+.text-primary-500 { color: var(--primary-500); }
+.text-primary-600 { color: var(--primary-600); }
+.text-primary-700 { color: var(--primary-700); }
+
+.bg-primary-500 { background-color: var(--primary-500); }
+.bg-primary-600 { background-color: var(--primary-600); }
+.bg-primary-700 { background-color: var(--primary-700); }
+
+.hover\:bg-primary-600:hover { background-color: var(--primary-600); }
+.hover\:bg-primary-700:hover { background-color: var(--primary-700); }
+
+.hover\:text-primary-600:hover { color: var(--primary-600); }
+.hover\:text-primary-700:hover { color: var(--primary-700); }
+
+/* Ensure select controls remain readable */
+.form-select, select, .form-input, input[type="text"], input[type="email"], input[type="tel"], textarea {
+    color: #1f2937;
+}
+
+/* Option styling where supported (browsers differ) */
+select option {
+    color: #111827;
+    background: #ffffff;
+}
+
+/* Visible selected option highlight where supported */
+select option:checked,
+select option[selected] {
+    background-color: var(--primary-600) !important;
+    color: #ffffff !important;
+}
+
+/* Segments dropdown improvements: reduce hover gap and ensure visibility above other elements */
+.nav-segments-dropdown {
+    margin-top: .25rem;
+    z-index: 1000;
+}
+.nav-segments-dropdown.transition {
+    transition: opacity 160ms ease-in-out, transform 160ms ease-in-out;
+}
+
+/* Form Styles */
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.2);
+    border-color: var(--primary-500);
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Responsive Utilities */
+@media (max-width: 768px) {
+    .md\:hidden {
+        display: none;
+    }
+}

@@ -1,0 +1,75 @@
+RewriteEngine On
+
+# Prevent access to htaccess file
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Allow direct access to assets
+RewriteCond %{REQUEST_URI} !^/admin/assets/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Handle admin pages
+#RewriteRule ^([^/]+)/?$ index.php?page=$1 [L,QSA]
+
+# Protect sensitive directories
+Options -Indexes
+
+# Basic security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+# Compress text files
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/x-javascript application/javascript application/json
+</IfModule>
+
+Options -Indexes
+RewriteEngine On
+
+# Prevent direct access to includes directory
+RewriteRule ^includes/ - [F,L]
+
+# Prevent direct access to config directory
+RewriteRule ^config/ - [F,L]
+
+# Redirect to login page if not logged in
+RewriteCond %{REQUEST_URI} !^/admin/login\.php
+RewriteCond %{REQUEST_URI} !^/admin/check\.php
+RewriteCond %{REQUEST_URI} !^/admin/assets/
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule .* login.php [L]
+
+# Security headers
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-XSS-Protection "1; mode=block"
+    Header set X-Frame-Options "DENY"
+    Header set Referrer-Policy "same-origin"
+</IfModule>
+
+# Prevent access to .htaccess
+<Files .htaccess>
+    Order allow,deny
+    Deny from all
+</Files>
+
+# Prevent PHP files from being accessed directly
+<Files *.php>
+    Order Deny,Allow
+    Deny from all
+    Allow from env=REDIRECT_STATUS
+</Files>
+
+# Allow access to necessary PHP files
+<Files ~ "^(index|login|check|logout)\.php$">
+    Order Allow,Deny
+    Allow from all
+</Files>

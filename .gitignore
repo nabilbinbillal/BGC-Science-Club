@@ -1,0 +1,23 @@
+# Ignore uploaded user files and generated assets
+uploads/
+
+# Ignore database dumps and SQL files
+*.sql
+db/
+database/
+
+# Ignore logs and debug files
+*.log
+error_log
+pages/debug.log
+
+# Environment and secret files
+.env
+admin/config/db.php
+db.php
+pages/config/db.php
+
+# Node / build
+node_modules/
+dist/
+build/
