@@ -102,6 +102,11 @@ Maintenance & contribution
 - Use environment variables in production or a secure secrets manager (e.g., HashiCorp Vault, cloud provider secrets).
 - When adding new config files, update `.gitignore` and document necessary environment variables here.
 
+Contribution & usage policy
+- You are welcome to fork this repository to propose fixes or improvements and open a pull request.
+- Forking for personal development or to propose changes is allowed. However, editing, redistributing, publishing, or uploading the code from this repository without the explicit permission of the original author is not authorized.
+- If you intend to republish or deploy modified copies publicly, contact the project maintainer first (see `pages/about-developer.php` for contact information) and ensure you follow licensing requirements.
+
 Troubleshooting
 - If PHP throws a PDO connection error, verify env vars are set and database user has privileges.
 - If files appear to be tracked after adding `.gitignore`, run:
@@ -115,10 +120,4 @@ git commit -m "Stop tracking sensitive file"
 Contact
 - For help with this repo or migration, contact the maintainer listed in the project files (developer info is included in `pages/about-developer.php`).
 
-License
-- This repo does not include an explicit license file. Add a `LICENSE` file if you want to make it open-source.
 
----
-If you'd like, I can now:
-- prepare and run a git-history purge (`git filter-repo`/BFG) for the files we identified, or
-- scan the codebase for remaining hard-coded secrets and sanitize them automatically.
