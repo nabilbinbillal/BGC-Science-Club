@@ -21,3 +21,6 @@ pages/config/db.php
 node_modules/
 dist/
 build/
+
+# API config
+api.json
